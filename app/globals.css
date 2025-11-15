@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAFAFA;
+  --fg: #0F0F0F;
+  --accent: #D3FF29;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--fg);
+  background: radial-gradient(circle at 20% 10%, #FFF 0, #FFF 20%, transparent 20%),
+              radial-gradient(circle at 80% 0%, #FFF 0, #FFF 18%, transparent 18%),
+              repeating-linear-gradient(0deg, #FAFAFA, #FAFAFA 18px, #F2F2F2 18px, #F2F2F2 36px);
+  background-attachment: fixed;
+}
+
+/* Brutalist utility classes */
+@layer utilities {
+  .brutal-border { @apply border-6 border-black; }
+  .brutal-shadow { box-shadow: 12px 12px 0 0 #000; }
+  .brutal-shadow-lg { box-shadow: 18px 18px 0 0 #000; }
+  .card { @apply brutal-border bg-paper; box-shadow: 10px 10px 0 0 #000; }
+}
+
+/* Selection */
+::selection {
+  background: #000;
+  color: #D3FF29;
+}
+
+/****************************
+  Neon grid wallpaper
+****************************/
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px;
+}
+
+/****************************
+  Marquee lane helper
+****************************/
+.marquee-lane {
+  display: flex;
+  width: 200%;
+}
